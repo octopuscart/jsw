@@ -315,7 +315,7 @@ $this->load->view('layout/header');
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
-                                                                <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16">                                Inquire                            </a>
+                                                                <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16">                                Inquire                            </a>
                                                             </div>
                                                             <div class="d-none d-xl-block prodcut-add-cart">
                                                                 <a href="" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
@@ -354,7 +354,7 @@ $this->load->view('layout/header');
                                                         </div>
                                                         <div class="flex-center-between mb-1">
                                                             <div class="prodcut-price">
-                                                                <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16">                                Inquire                            </a>
+                                                                <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16">                                Inquire                            </a>
                                                             </div>
                                                             <div class="d-none d-xl-block prodcut-add-cart">
                                                                 <a href="" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
@@ -425,10 +425,10 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="flex-center-between mb-3">
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
                                                 </div>
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                 </div>
                                             </div>
                                             
@@ -462,12 +462,12 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="flex-center-between mb-3">
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
                                                 </div>
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                 </div>
-                                            </div>
+                                            </div> 
                                             
                                         </div>
                                     </div>
@@ -560,10 +560,10 @@ $this->load->view('layout/header');
                                             </div>
                                             <div class="flex-center-between mb-1">
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">                                Inquire                            </a>
                                                 </div>
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $value); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                 </div>
                                             </div>
                                         </div>
