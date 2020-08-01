@@ -1,90 +1,112 @@
 <?php
-$this->load->view('layout/header');
-?>
-<style>
-    footer{
-        position: inherit!important;
-    }
-</style>
-<!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/contact.jpg');   margin-top: -30px;    ;         background-position: -370px -81px;
-    padding: 150px 0px;" data-center="" data-top-bottom="">
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0 " style="font-size: 62px;">Contact Us</h1>
-    </div>
-
-</section>
-<img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
-     position: absolute;
-     z-index: 200;" />
-
-<section id="slider" class="slider-element slider-reservation clearfix" style="    background: white;">
-   <?php
-    $this->load->view('layout/contactfooter');
-    ?>
-
-    <div id="popular-dest-map" class="gmap full-screen" data-height-xs="400px" data-height-sm="500px" data-height-md="500px">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4483.628686963382!2d114.17725123092295!3d22.297132355862846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f1d5868e65%3A0x9d3c90f9c84c3345!2zV29vZGxhbmRzIEluZGlhbiBWZWdldGFyaWFuIFJlc3RhdXJhbnQg5rS76Jit5Y2w5bqm57Sg6aOf!5e1!3m2!1sen!2sin!4v1587913099933!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-    <div class="p-5 reservation-form rounded bg-white" style="width:400px;bottom: 80px;">
-        <h3 class="font-secondary h1 color">Contact Us</h3>
-
-        <div class="form-widget mt-4 mt-lg-0" data-loader="button">
-            <div class="form-result"></div>
-            <form class="mb-0 row" id="template-contactform" name="template-contactform" method="post">
-                <div class="form-process"></div>
-                <div class="col-sm-12 mb-3">
-                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control border-form-control required" placeholder="Name" />
-                </div>
-                <div class="clear"></div>
-                <div class="col-sm-6 mb-3">
-                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control border-form-control" placeholder="Email Address" />
-                </div>
-
-                <div class="col-sm-6 mb-3">
-                    <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control border-form-control required" placeholder="Phone" />
-                </div>
-                <div class="col-sm-12 mb-3 input-daterange travel-date-group">
-                    <input type="text" id="template-contactform-subject" name="subject" value="" class="sm-form-control border-form-control tleft required" placeholder="Subject">
-                </div>
-                <div class="col-sm-12 mb-3 input-daterange travel-date-group">
-                    <textarea class="sm-form-control border-form-control tleft required" placeholder="Type Message.." style="height: auto;"></textarea>
-                </div>
-                <div class="clear"></div>
-
-                <div class="col-12 nobottommargin">
-                    <button class="button button-circle button-large text-white ml-0 mt-3 colordarkgreen" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Now</button>
-                </div>
-                <div class="clear"></div>
-                <div class="col-12 hidden">
-                    <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                </div>
-                <input type="hidden" name="prefix" value="template-contactform-">
-            </form>
-        </div>
-    </div>
-</section>
-
-<section >
-    <img src="<?php echo base_url(); ?>assets/theme2/res/images/sketch.png" style="    margin-top: -65px;
-         position: absolute;
-         z-index: 200;" />
-
-    <div class="container clearfix">
-        <h1 class="font-secondary capitalize ls0" style="font-size: 62px;text-align: center">Virtual tour
-        </h1>
-
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!4v1588398828193!6m8!1m7!1sCAoSLEFGMVFpcE9OQ293REtHUXcwMVhwQzF6Z0FQQlhaUU5abjdGN0p4RXltdzl4!2m2!1d22.2967363!2d114.1764946!3f80!4f0!5f0.7820865974627469" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
+$this->load->view('layout/header_1');
+?> <!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+    <!-- breadcrumb -->
+    <div class="bg-gray-13 bg-md-transparent">
+        <div class="container">
+            <!-- breadcrumb -->
+            <div class="my-md-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">Home</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
             </div>
-            <div class="col-lg-2"></div>
+            <!-- End breadcrumb -->
         </div>
     </div>
+    <!-- End breadcrumb -->
 
-</section>
+
+    <div class="container">
+        <div class="mb-5">
+            <h1 class="text-center">Contact Us</h1>
+        </div>
+        <div class="row mb-10">
+            <div class="col-lg-7 col-xl-6 mb-8 mb-lg-0">
+                <div class="mr-xl-6">
+                    <div class="border-bottom border-color-1 mb-5">
+                        <h3 class="section-title mb-0 pb-2 font-size-25">Leave us a Message</h3>
+                    </div>
+                    <p class="max-width-830-xl text-gray-90">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                    <form class="js-validate" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Input -->
+                                <div class="js-form-message mb-4">
+                                    <label class="form-label">
+                                        First name
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" name="firstName" placeholder="" aria-label="" required="" data-msg="Please enter your frist name." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
+                                </div>
+                                <!-- End Input -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- Input -->
+                                <div class="js-form-message mb-4">
+                                    <label class="form-label">
+                                        Last name
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" name="lastName" placeholder="" aria-label="" required="" data-msg="Please enter your last name." data-error-class="u-has-error" data-success-class="u-has-success">
+                                </div>
+                                <!-- End Input -->
+                            </div>
+
+                            <div class="col-md-12">
+                                <!-- Input -->
+                                <div class="js-form-message mb-4">
+                                    <label class="form-label">
+                                        Subject
+                                    </label>
+                                    <input type="text" class="form-control" name="Subject" placeholder="" aria-label="" data-msg="Please enter subject." data-error-class="u-has-error" data-success-class="u-has-success">
+                                </div>
+                                <!-- End Input -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="js-form-message mb-4">
+                                    <label class="form-label">
+                                        Your Message
+                                    </label>
+
+                                    <div class="input-group">
+                                        <textarea class="form-control p-5" rows="4" name="text" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary-dark-w px-5">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5 col-xl-6">
+                <div class="mb-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.004060519197!2d114.1482444!3d22.2874196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3fc7db1e3e305b1b!2sGolden%20Sun%20Centre!5e0!3m2!1sen!2sin!4v1596182376443!5m2!1sen!2sin" width="100%" height="228px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                        </div>
+                <div class="border-bottom border-color-1 mb-5">
+                    <h3 class="section-title mb-0 pb-2 font-size-25">Our Address</h3>
+                </div>
+                <address class="mb-6 text-lh-23">
+                    Room AB, 9/F, Golden Sun Centre, <br/>59/67 Bonham Strand West, <br/>Sheung Wan, Hong Kong
+
+                    <div class="">Support: +(852) 2368 7651</div>
+                    <div class="">Email: <a class="text-blue text-decoration-on" href="">info@jsw.com</a></div>
+                </address>
+                <h5 class="font-size-14 font-weight-bold mb-3">Opening Hours</h5>
+                <div class="">Monday to Friday: 9am-9pm</div>
+                <div class="mb-6">Saturday to Sunday: 9am-11pm</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
 
 <?php
 $this->load->view('layout/footer');

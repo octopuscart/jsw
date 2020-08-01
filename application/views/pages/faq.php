@@ -1,94 +1,200 @@
 <?php
-$this->load->view('layout/header');
+$this->load->view('layout/header_1');
 ?>
 
-
-<!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area" style="    background: url(<?php echo base_url(); ?>assets/images/shop2.jpg);
-     background-size: cover;
-     background-position: 459px -1031px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>FAQ's</h1>
-                    <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li>FAQ's</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Inner Page Banner Area End Here -->
-<!-- Contact Us Page Area Start Here -->
-<!-- Single Blog Page Area Start Here -->
-<div class="single-blog-page-area" style="padding: 50px 0 30px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog-details-content">
-                    <?php
-                    $temp = array("Will you keep a record of my order? " => "Yes, we will keep a record of your online order with all the details. In addition, we will keep your individual paper pattern. ",
-                        "Once I complete the order online, how long does it take to deliver? " => "We will email your order confirmation within 24 hours with expected delivered date. We anticipate delivering all orders within 12-14 days of confirmation.",
-                        "Can you ship my order internationally? " => "Yes, we can ship orders to anywhere in the world. Delivery times vary by region.",
-                        "What is your return policy?" => "Upon inspection, if Bespoke Tailors made an error, we will then make arrangements to receive back the order and have it corrected or redone.",
-                        "What if I made a mistake in my order, can I fix it? " => "Yes, send us an email immediately and we will rectify the error.",
-                        "Do you ship the orders door-to-door?" => "Yes, we ship orders door-to-door via UPS, Fedex, DHL or EMS Speedpost",
-                        "What if my order doesn’t fit to my satisfaction?" => "Please contact us and we will do everything possible to handle the case and make you happy with your purchase.",
-                        "Can I send you a garment that fits perfectly to copy the measurements?" => "Yes, of course! That will help us to create perfect fit clothing for you.",
-                        "What does ‘bespoke’ mean?" => "The word bespoke means made-to-order or custom-made. It is most known for its centuries-old relationship with tailor-made suits.",
-                        "Are the buttons on jacket sleeves working or artificial?" => "We construct all jackets with working buttons."
-                    );
-                    ?>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                        <?php
-                        $index = 1;
-                        foreach ($temp as $x => $x_value) {
-                            ?>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne<?php echo "accord_" . $index; ?>" style="    background: #fff;color: #000;">
-                                    <h4 class="panel-title" >
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?php echo "accord_" . $index; ?>" aria-expanded="true" aria-controls="collapseOne<?php echo "accord_" . $index; ?>" style="font-size: 15px">
-                                          Q:  <?php echo $x; ?>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne<?php echo "accord_" . $index; ?>" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne<?php echo "accord_" . $index; ?>">
-                                    <div class="panel-body">
-                                      A:  <?php echo $x_value; ?>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <?php
-                            $index = $index + 1;
-                        }
-                        ?>
-
+  <!-- ========== MAIN CONTENT ========== -->
+        <main id="content" role="main">
+            <!-- breadcrumb -->
+            <div class="bg-gray-13 bg-md-transparent">
+                <div class="container">
+                    <!-- breadcrumb -->
+                    <div class="my-md-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">Home</a></li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">FAQ</li>
+                            </ol>
+                        </nav>
                     </div>
+                    <!-- End breadcrumb -->
                 </div>
             </div>
+            <!-- End breadcrumb -->
 
-        </div>
-    </div>
-</div>
-<!-- Single Blog Page Area End Here -->
-<!-- Contact Us Page Area End Here -->
+            <div class="container">
+               
+                <div class="mb-12 text-center">
+                    <h1>FAQ's</h1>
+                </div>
+                <!-- Basics Accordion -->
+                <div id="basicsAccordion" class="mb-12">
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingOne">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseOner"
+                                    aria-expanded="true"
+                                    aria-controls="basicsCollapseOner">
+                                    What Shipping Methods Are Available?
 
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseOner" class="collapse show"
+                            aria-labelledby="basicsHeadingOne"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
 
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingTwo">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="basicsCollapseTwo">
+                                    How Long Will it Take To Get My Package?
 
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseTwo" class="collapse"
+                            aria-labelledby="basicsHeadingTwo"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
 
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingThree">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="basicsCollapseThree">
+                                    How Do I Track My Order?
 
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseThree" class="collapse"
+                            aria-labelledby="basicsHeadingThree"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
 
-<!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingFour">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="basicsCollapseFour">
+                                    How Do I Place an Order?
 
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseFour" class="collapse"
+                            aria-labelledby="basicsHeadingFour"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
 
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingFive">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseFive"
+                                    aria-expanded="false"
+                                    aria-controls="basicsCollapseFive">
+                                    How Should I to Contact if I Have Any Queries?
+
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseFive" class="collapse"
+                            aria-labelledby="basicsHeadingFive"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingSix">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseSix"
+                                    aria-expanded="false"
+                                    aria-controls="basicsCollapseSix">
+                                    Do I Need an Account to Place an Order?
+
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseSix" class="collapse"
+                            aria-labelledby="basicsHeadingSix"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0">
+                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                </div>
+                <!-- End Basics Accordion -->
+               
+            </div>
+        </main>
+        <!-- ========== END MAIN CONTENT ========== -->
 <?php
 $this->load->view('layout/footer');
 ?>

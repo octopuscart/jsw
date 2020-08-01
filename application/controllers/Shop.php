@@ -12,20 +12,10 @@ class Shop extends CI_Controller {
     }
 
     public function index() {
-        $product_home_slider_bottom = $this->Product_model->product_home_slider_bottom();
-        $categories = $this->Product_model->productListCategories(0);
-        $data["categories"] = $categories;
-        $data["product_home_slider_bottom"] = $product_home_slider_bottom;
-        $customarray = [1, 2];
-        $this->db->where_in('id', $customarray);
-        $query = $this->db->get('custome_items');
-        $customeitem = $query->result();
+        $testproduct = $this->Product_model->testProducts();
+        $data['products'] = $testproduct;
+        $data['productids'] = [1, 3, 2, 6, 7, 8];
 
-        $data['shirtcustome'] = $customeitem[0];
-        $data['suitcustome'] = $customeitem[1];
-
-        $query = $this->db->get('sliders');
-        $data['sliders'] = $query->result();
 
         $this->load->view('home', $data);
     }
@@ -101,7 +91,7 @@ class Shop extends CI_Controller {
     }
 
     public function faq() {
-        // $this->load->view('pages/faq');
+        $this->load->view('pages/faq');
     }
 
     public function wall() {
@@ -257,20 +247,15 @@ class Shop extends CI_Controller {
         $this->load->view('pages/feedback');
     }
 
- 
-
-   
-
     function testDate() {
         $timeslotarray = ["10:29 AM", "12:30 PM", "02:24 PM", "04:30 PM", "06:30 PM", "07:30 PM", "10:20 PM", date("h:i A")];
 
         $timeslot = [];
         foreach ($timeslotarray as $key => $value) {
-           $check =  $this->Utils->checkTime($value);
-           echo "--<br>";
-           print_r($check);
+            $check = $this->Utils->checkTime($value);
+            echo "--<br>";
+            print_r($check);
         }
-
     }
 
 }

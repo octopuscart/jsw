@@ -1,431 +1,167 @@
 <?php
-$this->load->view('layout/header');
+$this->load->view('layout/header_1');
 ?>
 
-<?php
-$linklist = [];
-$cattitle = "";
-foreach ($categorie_parent as $key => $value) {
-    $cattitle = $value['category_name'];
-    $catid = $value['id'];
-    $liobj = "<li><a href='" . site_url("Product/ProductList/" . $catid) . "'>$cattitle</a></li>";
-    array_push($linklist, $liobj);
-}
-?>
-
-
-<style>
-   .frame {
-  
-  font-family: sans-serif;
-	overflow: hidden;
-
-	margin: 3vw;
-  display: inline-block;
-  
-  .zoom {
-    
-    font-size: 1.3vw;
-		transition: transform 0.2s linear;
-    
-  }
-  
-  
-  img {
-	  
-    max-width: 25vw;
-  
-  }
-  
-  
-  .lorem {
-    
-    padding: 2% 2%;
-  
-  }
-  
-  
-  form {
-
-    margin : 2% auto;    
-    text-align: center;
-    
-    button {
-      
-      font-size: inherit;
-      margin: inherit;
-      
-    }
-  
-    input {
-      
-      border {
-        radius : 5px;
-        style: 1px solid;
-      }    
-     
-      width :20vw;
-      margin : 2% auto;
-      padding: .5vw .8vw;
-      font-size: 1.3vw;
-    
-    }
-  }
-}
-</style>
-
-
-<!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area" style="background: url(<?php echo imageserver . $product_details['file_name2']; ?>);    background-position: center;background-size: cover;
-     background-repeat: no-repeat;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcrumb-area">
-                    <h1>
-                        <?php echo $product_details['title']; ?>
-                    </h1>
-                    <ul>
-                        <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
-                        <?php echo count($linklist) ? "<b class='barcomb-list'>/</b>" : ''; ?>
-                        <?php
-                        echo implode("<b class='barcomb-list'>/</b>", $linklist)
-                        ?>
-                    </ul>
-                </div>
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+    <!-- breadcrumb -->
+    <div class="bg-gray-13 bg-md-transparent">
+        <div class="container">
+            <!-- breadcrumb -->
+            <div class="my-md-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">Home</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../shop/shop.html"><?php echo $product['tag']; ?></a></li>
+                   </ol>
+                </nav>
             </div>
+            <!-- End breadcrumb -->
         </div>
     </div>
-</div>
+    <!-- End breadcrumb -->
 
-
-
-
-
-
-
-<!-- Product Details2 Area Start Here -->
-<div class="product-details2-area" ng-controller="ProductDetails">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-product-details-left">
-                    <div class="tab-content frame">
 
-                        <?php
-                        $images = array(
-                            'img1' => $product_details['file_name'],
-                            'img2' => $product_details['file_name1'],
-                            'img3' => $product_details['file_name2'],
-                        );
-                        foreach ($images as $key => $value) {
-                            $countarray = explode(".", $value);
-                            if (end($countarray)) {
-                                if ($value) {
-                                    ?>
-                                    <div class="tab-pane fade <?php echo $key == 'img1' ? 'active in' : ''; ?> zoom" id="images_<?php echo $key; ?>">
-                                        <a href="#" class="zoom ex1 product_image_detail">
-                                            <div class="product_image_back product_image_detail_big" style="background: url(<?php echo imageserver . $value; ?>"></div>
-                                            <!--<img alt="single" src="img/product/product-details1.jpg" class="img-responsive">-->
-                                        </a>
+
+        <!-- Single Product Body -->
+        <div class="mb-xl-14 mb-6">
+            <div class="row">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
+                         data-infinite="true"
+                         data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                         data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+                         data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
+                         data-nav-for="#sliderSyncingThumb">
+                             <?php
+                             foreach ($product['img'] as $ikey => $ivalue) {
+                                 ?>
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                            </div>
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+
+                    <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
+                         data-infinite="true"
+                         data-slides-show="5"
+                         data-is-thumbs="true"
+                         data-nav-for="#sliderSyncingNav">
+                             <?php
+                             foreach ($product['img'] as $ikey => $ivalue) {
+                                 ?>
+                            <div class="js-slide" style="cursor: pointer;">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                            </div>
+                            <div class="js-slide" style="cursor: pointer;">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-7 mb-md-6 mb-lg-0">
+                    <div class="mb-2">
+                        <div class="border-bottom mb-3 pb-md-1 pb-3">
+                            <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block"><?php echo $product['tag']; ?></a>
+                            <h2 class="font-size-25 text-lh-1dot2"><?php echo $product['title']; ?></h2>
+                            <div class="mb-2">
+                                <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
+                                    <div class="text-warning mr-2">
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="far fa-star text-muted"></small>
                                     </div>
-                                    <?php
-                                }
-                            }
-                        }
-                        ?>
-                    </div>
-                    <ul>
-                        <?php
-                        foreach ($images as $key => $value) {
-                            $countarray = explode(".", $value);
-                            if (end($countarray)) {
-                                if ($value) {
-                                    ?>
-                                    <li class="<?php echo $key == 'img1' ? 'active' : ''; ?>">
-                                        <a class="product_image_detail" href="#images_<?php echo $key; ?>" data-toggle="tab" aria-expanded="false">
-                                            <div class="product_image_back product_image_detail_small" style="background: url(<?php echo imageserver . $value; ?>"></div>
-                                        </a>
-                                    </li>
-                                    <?php
-                                }
-                            }
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-product-details-right">
-                    <h3><?php echo $product_details['title']; ?><br/>
-                        <small><?php echo $product_details['title']; ?>
-                            <span style="    font-size: 12px;color: #000;"></span>
-                        </small>
-                    </h3>
-                    <ul>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    </ul>
-                    <p class="price">{{<?php echo $product_details['price']; ?>|currency:"<?php echo globle_currency; ?> "}}</p>
-                    <p>
-                        <?php echo $product_details['short_description']; ?>
-                    </p>
 
-
-                    <div class="product-details-content">
-                        <p><span>Availability:</span> <?php echo $product_details['stock_status']; ?></p>
-                        <p><span>Category:</span> <?php echo $cattitle; ?></p>
-
-                    </div>
-
-
-                    <div class="product_variation_list">
-
-                        <?php
-                        foreach ($product_attr as $key => $value) {
-                            $productvrnt = $product_attr_variant[$value['attribute']];
-                            if (count($productvrnt) > 1) {
-                                ?>
-                                <p class="product_detail_attr" style="margin-top: 10px;"><?php echo $value['attribute']; ?></p>
-
-                                <ul class="product-tags">
-                                    <?php
-                                    foreach ($product_attr_variant[$value['attribute']] as $kat => $vat) {
-                                        ?>
-                                        <li class="<?php echo $vat['attribute_value'] == $value['attribute_value'] ? 'active' : ''; ?>">
-                                            <a href="<?php echo site_url("Product/ProductDetails/" . $vat['product_id']); ?>" ><?php echo $vat['attribute_value']; ?></a>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
+                                </a>
+                            </div>
+                            <div class="d-md-flex align-items-center">
+                                <div class="ml-md-3 text-gray-9 font-size-14">Availability: <span class="text-green font-weight-bold">In stock</span></div>
+                            </div>
+                        </div>
+                        <div class="flex-horizontal-center flex-wrap mb-4">
+                            <a href="#" class="text-gray-6 font-size-13 mr-2"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                            <a href="#" class="text-gray-6 font-size-13 ml-2"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                        </div>
+                        <div class="mb-2">
+                            <ul class="font-size-14 pl-3 ml-1 text-gray-110">
                                 <?php
-                            }
-                        }
-                        ?>
-
-
-                        <!--                        <form id="checkout-form">
-                        
-                        <?php
-                        foreach ($product_attr as $key => $value) {
-                            $productvrnt = $product_attr_variant[$value['attribute']];
-                            if (count($productvrnt) > 1) {
-                                ?>
-                                                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                                                <ul class="more-option">
-                                                                                                                                                                                    <li>
-                                                                                                                                                                                        <div class="form-group">
-                                                                                                                                                                                            <div class="custom-select">
-                                                                                                                                                                                                 COLOR 
-                                                                                                                                                                                                <p class="product_detail_attr"><?php echo $value['attribute']; ?></p>
-                                                                                                                                                                                                <select  class='select2'>
-                                <?php
-                                foreach ($product_attr_variant[$value['attribute']] as $kat => $vat) {
+                                foreach ($product['spacs'] as $skey => $svalue) {
                                     ?>
-                                    <?php //echo $value['attribute_value']; ?>
-                                                                                                                                                                                                                                                                <option <?php echo $vat['attribute_value'] == $value['attribute_value'] ? 'selected' : ''; ?> value="<?php echo $vat['product_id']; ?>" ><?php echo $vat['attribute_value']; ?></option>
+                                    <li><?php echo $svalue;?></li>
                                     <?php
                                 }
                                 ?>
-                                                                                                                                                                                                </select>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                    </li>
-                                                                                                                                                                                </ul>
-                                                                                                                                                                            </div>
-                                <?php
-                            }
-                        }
-                        ?>
-                                                </form>-->
-                    </div>
-
-
-                    <ul class="inner-product-details-cart">
-                        <li>
-                            <div class="input-group quantity-holder" id="quantity-holder">
-                                <input type="text" name='quantity' class="form-control quantity-input" ng-model="productver.quantity" placeholder="1">
-                                <div class="input-group-btn-vertical">
-                                    <button class="btn btn-default quantity-plus" type="button" ng-click="updateCartDetail('add')"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                    <button class="btn btn-default quantity-minus" type="button" ng-click="updateCartDetail('sub')"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                            </ul>
+                        </div>
+                        <p><strong>SKU</strong>: <?php echo $product['sku']; ?></p>
+                       
+                        <div class="border-top border-bottom py-3 mb-4">
+                            <div class="d-flex align-items-center">
+                                <h6 class="font-size-14 mb-0">Select</h6>
+                                <!-- Select -->
+                                <select class="js-select selectpicker dropdown-select ml-3"
+                                        data-style="btn-sm bg-white font-weight-normal py-2 border">
+                                    <?php
+                                foreach ($product['attr'] as $skey => $svalue) {
+                                    ?>
+                                    <option value="one" selected><?php echo $svalue;?></option>
+                                    <?php
+                                }
+                                ?>
+                                </select>
+                                <!-- End Select -->
+                            </div>
+                        </div>
+                        <div class="d-md-flex align-items-end mb-3">
+                            <div class="max-width-150 mb-4 mb-md-0">
+                                <h6 class="font-size-14">MOQ</h6>
+                                <!-- Quantity -->
+                                <div class="border rounded-pill py-2 px-3 border-color-1">
+                                    <div class="js-quantity row align-items-center">
+                                        <div class="col">
+                                            <input class="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="number" value="<?php echo $product['moq'];?>" min='<?php echo $product['moq'];?>'>
+                                        </div>
+                                        <div class="col-auto pr-1">
+                                            <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
+                                                <small class="fas fa-minus btn-icon__inner"></small>
+                                            </a>
+                                            <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
+                                                <small class="fas fa-plus btn-icon__inner"></small>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- End Quantity -->
                             </div>
-                        </li>
-                        <li><a href="#" ng-click="addToCart(<?php echo $product_details['id']; ?>, productver.quantity)">Add To Cart</a></li>
-    <!--                            <li><a href="#"><i aria-hidden="true" class="fa fa-heart-o"></i></a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                        -->
-                    </ul>
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-        <div class="product-details-tab-area">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul>
-                        <li class="active"><a href="#highlights" data-toggle="tab" aria-expanded="false">Highlights</a></li>
-                        <li><a href="#description" data-toggle="tab" aria-expanded="false">Description</a></li>
-                        <?php
-                        if ($product_details['video_link']) {
-                            ?>
-                            <li><a href="#videodescription" data-toggle="tab" aria-expanded="false">Video Description</a></li>
-
-                            <?php
-                        }
-                        ?>
-                    </ul>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="tab-content">
-
-                        <div class="tab-pane fade active in spacification_product_details" id="highlights">
-                            <div class="product-details-content product_highlights">
-                                <p><span>Availability:</span> <?php echo $product_details['stock_status']; ?></p>
-                                <p><span>Category:</span> <?php echo $cattitle; ?></p>
-                                <?php
-                                foreach ($product_attr as $key => $value) {
-                                    ?>
-                                    <p><span><?php echo $value['attribute']; ?>:</span> <?php echo $value['attribute_value']; ?></p>
-                                    <?php
-                                }
-                                ?>
+                            <div class="ml-md-3">
+                                <a href="#" class="btn px-5 btn-primary-dark transition-3d-hover"><i class="ec ec-add-to-cart mr-2 font-size-20"></i> Inquire</a>
                             </div>
                         </div>
-
-                        <div class="tab-pane fade in spacification_product_details" id="description">
-                            <p class="">
-                                <?php echo $product_details['description']; ?> 
-                            </p>
-                        </div>
-
-                        <?php
-                        if ($product_details['video_link']) {
-                            ?>
-                            <div class="tab-pane fade in spacification_product_details" id="videodescription">
-                                <p class="">
-                                <center>
-                                    <iframe width="800" height="400" src="<?php echo $product_details['video_link']; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                </center>
-                                </p>
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-        <div class="featured-products-area2">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="title-carousel">Related Products</h2>
-                </div>
-            </div>
-            <div class="metro-carousel" data-loop="true" data-items="4" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="4" data-r-large-nav="true" data-r-large-dots="false">
+        <!-- End Single Product Body -->
 
-                <?php
-                foreach ($product_related as $key => $value) {
-                    ?>
 
-                    <div class="product-box1">
-                        <ul class="product-social">
-                            <li><a href="#" ng-click="addToCart(<?php echo $value['id']; ?>, 1)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <div class="product-img-holder">
-                            <?php
-                            if ($value['sale_price']) {
-                                ?>
-                                <div class="hot-sale" >
-                                    <span>Sale</span>
-                                </div>
-                                <?php
-                            }
-                            ?>
 
-                            <a href="#">
-                                <div class="product_image_back product_image_back_grid" style="background: url(<?php echo imageserver . $value['file_name']; ?>);"></div>
-
-                            </a>
-                        </div>
-                        <div class="product-content-holder">
-                            <h3><a href="#"><?php echo $value['title']; ?></a></h3>
-                            <span>
-                                <?php
-                                if ($value['sale_price']) {
-                                    ?>
-                                    <span>{{<?php echo $value['sale_price']; ?>|currency:"<?php echo globle_currency; ?> "}}</span>
-                                    <?php
-                                }
-                                ?>
-                                {{<?php echo $value['price']; ?>|currency:"<?php echo globle_currency; ?> "}}
-                            </span>
-                        </div>
-                    </div>
-                <?php }
-                ?>
-            </div>
-        </div>
     </div>
-</div>
-<!-- Product Details1 Area End Here -->
 
 
 
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
 
 <?php
 $this->load->view('layout/footer');
 ?>
-<script>
-    
-    //zoom plugin
-
-        $(document).on('mousemove', '.frame', function () {
-
-            var element = {
-                width: $(this).width(),
-                height: $(this).height()
-            };
-
-            var mouse = {
-                x: event.pageX,
-                y: event.pageY
-            };
-
-            var offset = $(this).offset();
-
-            var origin = {
-                x: (offset.left + (element.width / 2)),
-                y: (offset.top + (element.height / 2))
-            };
-
-            var trans = {
-                left: (origin.x - mouse.x) / 2,
-                down: (origin.y - mouse.y) / 2
-            };
-
-            var transform = ("scale(2,2) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
-
-            $(this).children(".zoom").css("transform", transform);
-
-        });
-
-        $(document).on('mouseleave', '.frame', function () {
-            $(this).children(".zoom").css("transform", "none");
-        });
-
-        //end of zoom
-    
-</script>

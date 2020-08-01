@@ -74,6 +74,8 @@ $route['loyalty-program'] = 'Shop/loyalprogram';
 
 $route['feedback'] = 'Shop/feedback';
 
+$route['faqs'] = 'Shop/faq';
+
 $route['blog'] = 'Shop/blog/$1';
 
 $route['translate_uri_dashes'] = FALSE;

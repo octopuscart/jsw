@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product_model extends CI_Model {
 
     function __construct() {
-        // Call the Model constructor
+// Call the Model constructor
         parent::__construct();
         $this->load->database();
     }
@@ -78,8 +78,8 @@ class Product_model extends CI_Model {
         return "Only " . globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
-    ///*******  Get data for deepth of the array  ********///
-    //Categories string
+///*******  Get data for deepth of the array  ********///
+//Categories string
     function stringCategories($category_id) {
         $this->db->where('parent_id', $category_id);
         $query = $this->db->get('category');
@@ -109,7 +109,7 @@ where pa.product_id = $product_id group by attribute_value_id";
         return $arrayattr;
     }
 
-    //product Details
+//product Details
     function productDetails($product_id, $custom_id = 0) {
         $this->db->where('id', $product_id);
         $query = $this->db->get('products');
@@ -150,18 +150,18 @@ where pa.product_id = $product_id group by attribute_value_id";
         $this->db->where('variant_product_of', $product_id);
         $query = $this->db->get('products');
         $product_veriant = $query->result_array();
-        
+
         $returnArray = array();
-        if($product_veriant){
+        if ($product_veriant) {
             $returnArray[$product_main['id']] = $product_main;
             foreach ($product_veriant as $key => $value) {
-                $returnArray[$value['id']] =  $value;
+                $returnArray[$value['id']] = $value;
             }
         }
         return $returnArray;
     }
 
-    //product veriants
+//product veriants
     function productDetailsVariants($product_id) {
         $product_veriant = $this->getProductVeriants($product_id);
         $mproduct_id = $product_id;
@@ -210,8 +210,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    /////Cart management 
-    //get cart data
+/////Cart management 
+//get cart data
     function cartData($user_id = 0) {
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
@@ -283,7 +283,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    //get order details  
+//get order details  
     public function getOrderDetails($key_id, $is_key = 0) {
         $order_data = array();
         if ($is_key === 'key') {
@@ -355,12 +355,12 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         return $order_data;
     }
 
-    //usr cart
+//usr cart
     public function userCartOperationGet($user_id) {
         
     }
 
-    //cart operation session 
+//cart operation session 
     public function cartOperation($product_id, $quantity, $user_id = 0, $setSession = 0) {
 
 
@@ -373,7 +373,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'sku' => $product_details['sku'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
-                'total_price' => $product_details['price']*$quantity,
+                'total_price' => $product_details['price'] * $quantity,
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                 'quantity' => $quantity,
                 'user_id' => $user_id,
@@ -422,7 +422,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'sku' => $product_details['sku'],
                     'attrs' => "",
                     'vendor_id' => $product_details['user_id'],
-                    'total_price' => $product_details['price']*$quantity,
+                    'total_price' => $product_details['price'] * $quantity,
                     'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                     'quantity' => $quantity,
                     'product_id' => $product_id,
@@ -436,7 +436,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    //category list array
+//category list array
     function productListCategories($category_id) {
         $this->db->where('parent_id', $category_id);
         $query = $this->db->get('category');
@@ -549,7 +549,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    //menu controller
+//menu controller
     function menuController() {
         return "";
     }
@@ -645,7 +645,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $this->db->insert('vendor_order', $vendor_order_dict);
                 $last_id = $this->db->insert_id();
 
-                //add vendor status
+//add vendor status
                 $vendor_order_status_data = array(
                     'c_date' => date('Y-m-d'),
                     'c_time' => date('H:i:s'),
@@ -660,8 +660,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
-    //custom product model
-    //cart operation session 
+//custom product model
+//cart operation session 
     public function cartOperationCustom($product_id, $quantity, $custom_id, $customekey, $customevalue, $user_id = 0, $setSession = 0) {
 
         $this->db->where('id', $custom_id);
@@ -792,7 +792,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
                 'quantity' => $quantity,
                 'user_id' => $user_id,
-          
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
@@ -844,6 +843,155 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $last_id = $this->db->insert_id();
             $display_index = 1;
         }
+    }
+
+    public function testProducts() {
+        $products = array(
+            "1" =>
+            array(
+                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
+                "img" => ["1.jpg"],
+                "tag" => "Smart Television",
+                "sku" => "JT-SA32008GXSAMK",
+                "spacs" => [
+                    "Dynamic Contrast Ratio",
+                    "WIFI & LAN Connect",
+                    "Full Android",
+                    "HDMI Port",
+                    "USB Function",
+                    "HD TV 720p/1080i",
+                    "Available In:1Gb RAM & 8Gb ROM",
+                ],
+                "moq" => "50",
+                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
+            ),
+            "2" => array(
+                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
+                "img" => ["3.jpg"],
+                "tag" => "Smart Television",
+                "sku" => "JT-68005ANS25GAM",
+                "spacs" => [
+                    "Dynamic Contrast Ratio",
+                    "WIFI & LAN Connect",
+                    "Full Android",
+                    "HDMI Port",
+                    "USB Function",
+                    "HD TV 720p/1080i",
+                    "Available In:1Gb RAM & 8Gb ROM",
+                ],
+                "moq" => "50",
+                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
+            ),
+            "3" => array(
+                "title" => "Full HD Smart LED Televisio 720p/1080iSmart Television",
+                "img" => ["4.jpg"],
+                "tag" => "LED Television",
+                "sku" => "JT-32007DLED11",
+                "spacs" => [
+                    "Dynamic Contrast Ratio",
+                    "WIFI & LAN Connect",
+                    "Full Android",
+                    "HDMI Port",
+                    "USB Function",
+                    "HD TV 720p/1080i",
+                    "Available In:1Gb RAM & 8Gb ROM",
+                ],
+                "moq" => "50",
+                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
+            ),
+            "4" => array(
+                "title" => "DLP Smart Projector With Android OS and Wifi",
+                "img" => ["5.jpg"],
+                "tag" => "DLP Projector",
+                "sku" => "Q-2000",
+                "spacs" => [
+                    "DLP Projector",
+                    "WIFI Connect",
+                    "Full Android",
+                    "HDMI Port",
+                    "USB Function",
+                    "HD TV 720p/1080i",
+                    "Bluetooth",
+                ],
+                "moq" => "50",
+                "attr" => []
+            ),
+            "5" => array(
+                "title" => "Bluetooth Audio System With TWS Function Karaoke",
+                "img" => ["6.jpg"],
+                "tag" => "Audio System",
+                "sku" => "JM-8102DJ",
+                "spacs" => [
+                    "With TWS Function",
+                    "DJ Effect & Light",
+                    "Microphone Priority",
+                    "Line In/ Mic In",
+                    "USB/ SD Card",
+                    "Karaoke",
+                    "Bluetooth",
+                    "JM-8102DJ",
+                    "2 x 10” Speakers",
+                    "2 x 1” Tweeter Speakers",
+                ],
+                "moq" => "50",
+                "attr" => []
+            ),
+            "6" => array(
+                "title" => "Portable Trolley Bluetooth Speaker With TWS Function",
+                "img" => ["7.jpg"],
+                "tag" => "Audio System",
+                "sku" => "JM-799815",
+                "spacs" => [
+                    "15” Portable Speaker",
+                    "DJ Effect & Light",
+                    "Microphone Priority",
+                    "Line In/ Mic In",
+                    "USB/ SD Card",
+                    "Karaoke",
+                    "Bluetooth",
+                    "FM Radio",
+                ],
+                "moq" => "50",
+                "attr" => []
+            ),
+            "7" => array(
+                "title" => "12” Portable Speaker TWS Function Karaoke",
+                "img" => ["8.jpg"],
+                "tag" => "Audio System",
+                "sku" => "JM-558812",
+                "spacs" => [
+                    "12” Portable Speaker",
+                    "DJ Effect & Light",
+                    "Microphone Priority",
+                    "Line In/ Mic In",
+                    "USB/ SD Card",
+                    "Karaoke",
+                    "Bluetooth",
+                    "FM Radio",
+                ],
+                "moq" => "50",
+                "attr" => []
+            ),
+            "8" => array(
+                "title" => "Rechargeable Bluetooth Speaker With TWS Function Karaoke",
+                "img" => ["9.jpg"],
+                "tag" => "Rechargeable Speaker",
+                "sku" => "JM-8102DJ",
+                "spacs" => [
+                    "With TWS Function",
+                    "Rechargeable",
+                    "Microphone Priority",
+                    "Line In/ Mic In",
+                    "USB/ SD Card",
+                    "Karaoke",
+                    "Bluetooth",
+                    "6.5” x 2 Speakers",
+                ],
+                "moq" => "50",
+                "attr" => []
+            )
+        );
+        return $products;
     }
 
 }
