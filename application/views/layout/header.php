@@ -17,7 +17,7 @@
         <!-- CSS Implementing Plugins -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/font-awesome/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-electro.css">
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/css/style.css" media="all" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/animate.css/animate.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/hs-megamenu/src/hs.megamenu.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">

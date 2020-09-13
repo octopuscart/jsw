@@ -136,9 +136,11 @@ class Product extends CI_Controller {
         $this->session->unset_userdata('session_cart');
     }
 
-    function productDetailsView($product_id=1) {
+    function productDetailsView($product_id=1, $attr = 1) {
         $testproduct = $this->Product_model->testProducts();
         $data['product'] = $testproduct[$product_id];
+        $data['attrselect'] = $attr;
+        $data['product_id'] = $product_id;
         $this->load->view('Product/productDetails', $data);
     }
     

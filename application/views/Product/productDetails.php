@@ -3,7 +3,7 @@ $this->load->view('layout/header_1');
 ?>
 
 <!-- ========== MAIN CONTENT ========== -->
-<main id="content" role="main">
+<main id="content" role="main" ng-controller="productDetailsController">
     <!-- breadcrumb -->
     <div class="bg-gray-13 bg-md-transparent">
         <div class="container">
@@ -27,46 +27,89 @@ $this->load->view('layout/header_1');
         <!-- Single Product Body -->
         <div class="mb-xl-14 mb-6">
             <div class="row">
-                <div class="col-md-5 mb-4 mb-md-0">
-                    <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
-                         data-infinite="true"
-                         data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-                         data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-                         data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-                         data-nav-for="#sliderSyncingThumb">
-                             <?php
-                             foreach ($product['img'] as $ikey => $ivalue) {
-                                 ?>
-                            <div class="js-slide">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
-                            </div>
-                            <div class="js-slide">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
 
-                    <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
-                         data-infinite="true"
-                         data-slides-show="5"
-                         data-is-thumbs="true"
-                         data-nav-for="#sliderSyncingNav">
-                             <?php
-                             foreach ($product['img'] as $ikey => $ivalue) {
-                                 ?>
-                            <div class="js-slide" style="cursor: pointer;">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                <?php
+                if ($product['attr']) {
+                    ?>
+                    <div class="col-md-5 mb-4 mb-md-0" ng-if="selectProduct">
+                        <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
+                             data-infinite="true"
+                             data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                             data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+                             data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
+                             data-nav-for="#sliderSyncingThumb">
+
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/{{selectProduct.img[0]}}" alt="Image Description">
                             </div>
-                            <div class="js-slide" style="cursor: pointer;">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/{{selectProduct.img[1]}}" alt="Image Description">
                             </div>
-                            <?php
-                        }
-                        ?>
+
+                        </div>
+
+                        <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
+                             data-infinite="true"
+                             data-slides-show="5"
+                             data-is-thumbs="true"
+                             data-nav-for="#sliderSyncingNav">
+
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/{{selectProduct.img[0]}}" alt="Image Description">
+                            </div>
+                            <div class="js-slide">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/{{selectProduct.img[1]}}" alt="Image Description">
+                            </div>
+
+
+                        </div>
                     </div>
-                </div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="col-md-5 mb-4 mb-md-0" >
+                        <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
+                             data-infinite="true"
+                             data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                             data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+                             data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
+                             data-nav-for="#sliderSyncingThumb">
+                                 <?php
+                                 foreach ($product['img'] as $ikey => $ivalue) {
+                                     ?>
+                                <div class="js-slide">
+                                    <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                                </div>
+                                <div class="js-slide">
+                                    <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                                </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+
+                        <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
+                             data-infinite="true"
+                             data-slides-show="5"
+                             data-is-thumbs="true"
+                             data-nav-for="#sliderSyncingNav">
+                                 <?php
+                                 foreach ($product['img'] as $ikey => $ivalue) {
+                                     ?>
+                                <div class="js-slide" style="cursor: pointer;">
+                                    <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                                </div>
+                                <div class="js-slide" style="cursor: pointer;">
+                                    <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/testproduct/<?php echo $ivalue; ?>" alt="Image Description">
+                                </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
                 <div class="col-md-7 mb-md-6 mb-lg-0">
                     <div class="mb-2">
                         <div class="border-bottom mb-3 pb-md-1 pb-3">
@@ -107,18 +150,16 @@ $this->load->view('layout/header_1');
 
                         <div class="border-top border-bottom py-3 mb-4">
                             <div class="d-flex align-items-center">
-                                <h6 class="font-size-14 mb-0">Select</h6>
+                             
                                 <!-- Select -->
-                                <select class="js-select selectpicker dropdown-select ml-3"
-                                        data-style="btn-sm bg-white font-weight-normal py-2 border">
-                                            <?php
+                                <div class="row"> <?php
                                             foreach ($product['attr'] as $skey => $svalue) {
                                                 ?>
-                                        <option value="one" selected><?php echo $svalue; ?></option>
+                                    <button class="btn {{selectVeriation==<?php echo $skey;?>?'btn-danger':'btn-warning'}}"  ng-click="changeVeriation(<?php echo $skey;?>)" ><?php echo $svalue['title']; ?></button>
                                         <?php
                                     }
                                     ?>
-                                </select>
+                                </div>
                                 <!-- End Select -->
                             </div>
                         </div>
@@ -248,6 +289,29 @@ $this->load->view('layout/header_1');
 
 </main>
 <!-- ========== END MAIN CONTENT ========== -->
+
+
+<script>
+    App.controller('productDetailsController', function ($scope, $http, $timeout, $interval) {
+
+        $scope.productsAttr = <?php echo json_encode($product['attr']); ?>;
+        console.log($scope.productsAttr[0]);
+        $scope.selectVeriation = 0;
+        $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
+        
+        $scope.changeVeriation = function(index){
+             $scope.selectVeriation = index;
+             $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
+             $timeout(function(){
+                  $("#sliderSyncingNav").slick("refresh");
+              $("#sliderSyncingThumb").slick("refresh");
+             },500)
+            
+             
+        }
+        
+    })
+</script>
 
 <?php
 $this->load->view('layout/footer');

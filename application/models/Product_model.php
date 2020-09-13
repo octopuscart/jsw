@@ -847,6 +847,28 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
     public function testProducts() {
         $products = array(
+            "2" => array(
+                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
+                "img" => ["3.jpg"],
+                "tag" => "Smart Television",
+                "sku" => "JT-68005ANS25GAM",
+                "spacs" => [
+                    "Dynamic Contrast Ratio",
+                    "WIFI & LAN Connect",
+                    "Full Android",
+                    "HDMI Port",
+                    "USB Function",
+                    "HD TV 720p/1080i",
+                    "Available In:1Gb RAM & 8Gb ROM",
+                ],
+                "has_attr" => false,
+                "moq" => "50",
+                "attr" => [
+                    array("title" => "55 4K Smart", "img" => ["3_55.jpg", "3_h55.jpg"]),
+                    array("title" => "43 Full HD 1080p", "img" => ["3_43.jpg", "3_h43.jpg"]),
+                    array("title" => "32 HD Ready 720p", "img" => ["3_32.jpg", "3_h32.jpg"]),
+                ]
+            ),
             "1" =>
             array(
                 "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
@@ -863,24 +885,12 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "Available In:1Gb RAM & 8Gb ROM",
                 ],
                 "moq" => "50",
-                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
-            ),
-            "2" => array(
-                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
-                "img" => ["3.jpg"],
-                "tag" => "Smart Television",
-                "sku" => "JT-68005ANS25GAM",
-                "spacs" => [
-                    "Dynamic Contrast Ratio",
-                    "WIFI & LAN Connect",
-                    "Full Android",
-                    "HDMI Port",
-                    "USB Function",
-                    "HD TV 720p/1080i",
-                    "Available In:1Gb RAM & 8Gb ROM",
-                ],
-                "moq" => "50",
-                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
+                "has_attr" => true,
+                "attr" => [
+                    array("title" => "32 HD Ready 720p", "img" => ["1_32.jpg", "1_h32.jpg"]),
+                    array("title" => "43 Full HD 1080p", "img" => ["1_43.jpg", "1_h43.jpg"]),
+                    array("title" => "55 4K Smart", "img" => ["1_55.jpg", "1_h55.jpg"]),
+                ]
             ),
             "3" => array(
                 "title" => "Full HD Smart LED Televisio 720p/1080iSmart Television",
@@ -896,8 +906,13 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "HD TV 720p/1080i",
                     "Available In:1Gb RAM & 8Gb ROM",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
-                "attr" => ["32 HD Ready 720p", "43 Full HD 1080p", "55 4K Smart"]
+                "attr" => [
+                    array("title" => "32 HD Ready 720p", "img" => ["1_32.jpg", "1_h32.jpg"]),
+                    array("title" => "43 Full HD 1080p", "img" => ["1_43.jpg", "1_h43.jpg"]),
+                    array("title" => "55 4K Smart", "img" => ["1_55.jpg", "1_h55.jpg"]),
+                ]
             ),
             "4" => array(
                 "title" => "DLP Smart Projector With Android OS and Wifi",
@@ -913,6 +928,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "HD TV 720p/1080i",
                     "Bluetooth",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
                 "attr" => []
             ),
@@ -933,6 +949,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "2 x 10” Speakers",
                     "2 x 1” Tweeter Speakers",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
                 "attr" => []
             ),
@@ -951,6 +968,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "Bluetooth",
                     "FM Radio",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
                 "attr" => []
             ),
@@ -969,6 +987,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "Bluetooth",
                     "FM Radio",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
                 "attr" => []
             ),
@@ -987,6 +1006,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     "Bluetooth",
                     "6.5” x 2 Speakers",
                 ],
+                "has_attr" => false,
                 "moq" => "50",
                 "attr" => []
             )

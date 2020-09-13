@@ -487,6 +487,7 @@
         <script src="<?php echo base_url(); ?>assets/theme2/js/components/hs.svg-injector.js"></script>
         <script src="<?php echo base_url(); ?>assets/theme2/js/components/hs.go-to.js"></script>
         <script src="<?php echo base_url(); ?>assets/theme2/js/components/hs.selectpicker.js"></script>
+         <script src="<?php echo base_url(); ?>assets/theme2/angular/shopController.js"></script>
 
         <!-- JS Plugins Init. -->
         <script>
