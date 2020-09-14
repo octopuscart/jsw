@@ -1,6 +1,15 @@
 <?php
 $this->load->view('layout/header_1');
 ?>
+<style>
+    .u-slick--slider-syncing .slick-slide.slick-current {
+        border-bottom-width: 1px;
+        border-bottom-color: #ffffff;
+    }
+    .veriationbutton{
+        margin-right: 10px;
+    }
+</style>
 
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main" ng-controller="productDetailsController">
@@ -150,12 +159,12 @@ $this->load->view('layout/header_1');
 
                         <div class="border-top border-bottom py-3 mb-4">
                             <div class="d-flex align-items-center">
-                             
+
                                 <!-- Select -->
                                 <div class="row"> <?php
-                                            foreach ($product['attr'] as $skey => $svalue) {
-                                                ?>
-                                    <button class="btn {{selectVeriation==<?php echo $skey;?>?'btn-danger':'btn-warning'}}"  ng-click="changeVeriation(<?php echo $skey;?>)" ><?php echo $svalue['title']; ?></button>
+                                    foreach ($product['attr'] as $skey => $svalue) {
+                                        ?>
+                                        <button class="btn veriationbutton {{selectVeriation==<?php echo $skey; ?>?'btn-danger':'btn-warning'}}"  ng-click="changeVeriation(<?php echo $skey; ?>)" ><?php echo $svalue['title']; ?></button>
                                         <?php
                                     }
                                     ?>
@@ -294,22 +303,21 @@ $this->load->view('layout/header_1');
 <script>
     App.controller('productDetailsController', function ($scope, $http, $timeout, $interval) {
 
-        $scope.productsAttr = <?php echo json_encode($product['attr']); ?>;
-        console.log($scope.productsAttr[0]);
-        $scope.selectVeriation = 0;
-        $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
-        
-        $scope.changeVeriation = function(index){
-             $scope.selectVeriation = index;
-             $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
-             $timeout(function(){
-                  $("#sliderSyncingNav").slick("refresh");
-              $("#sliderSyncingThumb").slick("refresh");
-             },500)
-            
-             
-        }
-        
+    $scope.productsAttr = <?php echo json_encode($product['attr']); ?>;
+    console.log($scope.productsAttr[0]);
+    $scope.selectVeriation = 0;
+    $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
+    $scope.changeVeriation = function(index){
+    $scope.selectVeriation = index;
+    $scope.selectProduct = $scope.productsAttr[$scope.selectVeriation ];
+    $timeout(function(){
+    $("#sliderSyncingNav").slick("refresh");
+    $("#sliderSyncingThumb").slick("refresh");
+    }, 500)
+
+
+    }
+
     })
 </script>
 
