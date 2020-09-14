@@ -472,6 +472,21 @@
                                             <a class="nav-link u-header__nav-link" href="<?php echo site_url("about-us") ?>" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">INSIGHTS</a>
                                         </li>
                                         <!-- End Featured Brands -->
+                                        
+                                        
+                                        <!-- Featured Brands -->
+                                        <li class="nav-item u-header__nav-item">
+                                            <a class="nav-link u-header__nav-link" href="<?php echo site_url("Shop/catalogs") ?>" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">CATALOGS</a>
+                                        </li>
+                                        <!-- End Featured Brands -->
+                                        
+                                        
+                                        
+                                        <!-- Trending Styles -->
+                                        <li class="nav-item u-header__nav-item">
+                                            <a class="nav-link u-header__nav-link" href="<?php echo site_url("Shop/blog"); ?>" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">BLOG</a>
+                                        </li>
+                                        <!-- End Trending Styles -->
 
                                         <!-- Trending Styles -->
                                         <li class="nav-item u-header__nav-item">
