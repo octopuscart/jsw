@@ -418,7 +418,7 @@
 
                                         <li class="yamm-fw menu-item menu-item-has-children animate-dropdown dropdown">
                                             <a  class="nav-link u-header__nav-link u-header__nav-link-toggle" title="Pages" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" href="javascript:;" aria-haspopup="true" aria-expanded="false" >PRODUCTS</a>
-                                            <ul role="menu" class=" dropdown-menu" style="width: 800px;">
+                                            <ul role="menu" class=" dropdown-menu" style="width: 800px;margin-top: -8px;">
                                                 <li class="menu-item animate-dropdown">
                                                     <div class="yamm-content" style="display:inline-block; width: 100%;">
                                                         <div class="row">

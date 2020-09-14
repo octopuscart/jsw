@@ -274,6 +274,15 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
 
 
+    $(".yamm-fw").mousemove(function(){
+        $(".yamm-fw").addClass("show");
+        $(this).find(".dropdown-menu").addClass("show");
+    })
+    $("body").mouseout(function(){
+        $(".yamm-fw").removeClass("show");
+        $(".yamm-fw").find(".dropdown-menu").removeClass("show");
+    })
+
 
 })
 
