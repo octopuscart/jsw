@@ -8,11 +8,13 @@ $this->load->view('layout/header');
         margin: 0 auto;
     }
     .features-list {
-        border: 5px solid #fed700;
-        border-radius: 8px;
-        margin-bottom: 2.5em;
-        margin-left: 0;
-        margin-right: 0;
+       border: 5px solid #fed700;
+    border-radius: 0px;
+    margin-bottom: 2.5em;
+    margin-left: 0;
+    margin-right: 0;
+    border-left: none;
+    border-right: 0px;
     }
 </style>
 

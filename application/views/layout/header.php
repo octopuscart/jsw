@@ -17,7 +17,7 @@
         <!-- CSS Implementing Plugins -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/font-awesome/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-electro.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme2/css/style.css" media="all" />
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/animate.css/animate.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/hs-megamenu/src/hs.megamenu.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
@@ -26,7 +26,11 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
 
         <!-- CSS Electro Template -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/style.css">
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/theme.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/customstyle.css">
+
         <!--theme assets-->
 
         <!--sweet alert-->
@@ -46,7 +50,7 @@
     $megamenuitems = array(
         "TV & Audio" => array(
             "Smart Television" => [
-                "Android Smart TV", "43 Inch Smart TV", "Full HD Smart Tv"
+                "Android Smart TV", "55/43/32 Inch Smart TV", "Full HD Smart Tv"
             ],
             "Audio System" => [
                 "HI FI Audio System",
@@ -60,37 +64,17 @@
             "Air Conditioner" => ["Air Conditioner With Inverter", "Split AC", "Cooling & Heating AC"],
             "Washing Machine" => ['Fully Auto Washing Machine', "Semi Auto Washing Machine", "13KG Washing Machine"],
         ),
-        "Furniture & Decoration" => array(
-            "Smart Television" => [
-                "Android Smart TV", "43 Inch Smart TV", "Full HD Smart Tv"
-            ],
-            "Audio System" => [
-                "HI FI Audio System",
-                "Portable Trolley Speaker",
-                "Boom box",
-                "Rechargeable Speaker",
-                "Radio & MP3 Player"
-            ],
-        ),
-        "Air Appliances" => array(
-            "Air Conditioner" => ["Air Conditioner With Inverter", "Split AC", "Cooling & Heating AC"],
-            "Washing Machine" => ['Fully Auto Washing Machine', "Semi Auto Washing Machine", "13KG Washing Machine"],
-        ),
         "Kitchen Appliances" => array(
-            "Smart Television" => [
-                "Android Smart TV", "43 Inch Smart TV", "Full HD Smart Tv"
+            "Blenders" => [
+                "Commercial Blender", "Glass Blender", "Plastic Blender"
             ],
-            "Audio System" => [
-                "HI FI Audio System",
-                "Portable Trolley Speaker",
-                "Boom box",
-                "Rechargeable Speaker",
-                "Radio & MP3 Player"
+            "Food Processor" => [
+                "Hand Mixer",
+                "Kettle",
+                "Electric Hot Plate",
+                "Slice Toaster",
+                "Pressure Cooker"
             ],
-        ),
-        "Fashion Accessories" => array(
-            "Air Conditioner" => ["Air Conditioner With Inverter", "Split AC", "Cooling & Heating AC"],
-            "Washing Machine" => ['Fully Auto Washing Machine', "Semi Auto Washing Machine", "13KG Washing Machine"],
         ),
     );
     ?>
@@ -138,7 +122,7 @@
                                                 <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
                                                     <a class="dropdown-item active" href="#">Dollar (US)</a>
                                                     <a class="dropdown-item active" href="#">Dollar (HK)</a>
-                           
+
                                                 </div>
                                             </div>
                                             <!-- End Language -->
@@ -269,7 +253,7 @@
                                                                                 <?php
                                                                                 foreach ($menu2 as $key2 => $item) {
                                                                                     ?>
-                                                                                <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url('Product/productListView')?>"><?php echo $item; ?></a></li>
+                                                                                    <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url('Product/productListView') ?>"><?php echo $item; ?></a></li>
 
                                                                                     <?php
                                                                                 }
@@ -330,7 +314,7 @@
                                             <select class="js-select selectpicker dropdown-select custom-search-categories-select"
                                                     data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
                                                 <option value="one" selected>All Categories</option>
-                                                 <option value="two">Tv & Audio</option>
+                                                <option value="two">Tv & Audio</option>
                                                 <option value="three">Home Appliances</option>
                                                 <option value="four">Kitchen Appliances</option>
                                             </select>
@@ -384,10 +368,10 @@
                                         <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
                                             <a href="../shop/cart.html" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
                                                 <i class="font-size-22 ec ec-shopping-bag"></i>
-                                           </a>
+                                            </a>
                                         </li>
                                         <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
-                                            
+
                                         </li>
                                     </ul>
                                 </div>
@@ -403,116 +387,8 @@
 
                 <!-- Vertical-and-secondary-menu -->
                 <!-- Vertical-and-secondary-menu -->
-                <div class="d-none d-xl-block container">
+                <div class="d-none d-xl-block mainmenucontainer">
                     <div class="row">
-                        <!-- Vertical Menu -->
-                        <div class="col-md-auto d-none d-xl-block">
-                            <div class="max-width-270 min-width-270">
-                                <!-- Basics Accordion -->
-                                <div id="basicsAccordion">
-                                    <!-- Card -->
-                                    <div class="card border-0">
-                                        <div class="card-header card-collapse border-0" id="basicsHeadingOne">
-                                            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                                                    data-toggle="collapse"
-                                                    data-target="#basicsCollapseOne"
-                                                    aria-expanded="true"
-                                                    aria-controls="basicsCollapseOne">
-                                                <span class="ml-0 text-gray-90 mr-2">
-                                                    <span class="fa fa-list-ul"></span>
-                                                </span>
-                                                <span class="pl-1 text-gray-90">All Departments</span>
-                                            </button>
-                                        </div>
-                                        <div id="basicsCollapseOne" class="collapse show vertical-menu"
-                                             aria-labelledby="basicsHeadingOne"
-                                             data-parent="#basicsAccordion">
-                                            <div class="card-body p-0">
-                                                <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
-                                                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                        <ul class="navbar-nav u-header__navbar-nav">
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Value of the Day</a>
-                                                            </li>
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
-                                                            </li>
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">New Arrivals</a>
-                                                            </li>
-                                                            <!-- Nav Item MegaMenu -->
-                                                            <?php
-                                                            foreach ($megamenuitems as $key1 => $mainmenu) {
-                                                                ?>
-                                                                <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                                    data-event="hover"
-                                                                    data-animation-in="slideInUp"
-                                                                    data-animation-out="fadeOut"
-                                                                    data-position="left">
-                                                                    <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false"><?php echo $key1; ?></a>
-
-                                                                    <!-- Nav Item - Mega Menu -->
-
-
-                                                                    <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
-
-
-                                                                        <div class="row u-header__mega-menu-wrapper">
-
-                                                                            <?php
-                                                                            foreach ($mainmenu as $key2 => $menu2) {
-                                                                                ?>
-                                                                                <div class="col mb-3 mb-sm-0">
-                                                                                    <span class="u-header__sub-menu-title"><?php echo $key2; ?></span>
-                                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                                        <?php
-                                                                                        foreach ($menu2 as $key2 => $item) {
-                                                                                            ?>
-                                                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="<?php echo site_url('Product/productListView')?>"><?php echo $item; ?></a></li>
-                                                                                            <?php
-                                                                                        }
-                                                                                        ?>
-                                                                                        <li>
-                                                                                            <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start" href="#">
-                                                                                                <div class="">All Electronics</div>
-                                                                                                <div class="u-nav-subtext font-size-11 text-gray-30">Discover more products</div>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-
-                                                                                <?php
-                                                                            }
-                                                                            ?>
-                                                                            <div style="clear:both"></div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- End Nav Item - Mega Menu -->
-                                                                </li>
-                                                                <?php
-                                                            }
-                                                            ?>
-
-
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Card -->
-                                </div>
-                                <!-- End Basics Accordion -->
-                            </div>
-                        </div>
-                        <!-- End Vertical Menu -->
 
 
                         <!-- Secondary Menu -->
@@ -529,12 +405,66 @@
 
                                             <!-- Blog - Submenu -->
                                             <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu animated fadeOut" aria-labelledby="blogMegaMenu" style="min-width: 230px; display: none;">
-                                                <li><a class="nav-link u-header__sub-menu-nav-link" href="<?php echo site_url("/") ?>">Customer Service</a></li>
+                                                <li >
+                                                    <a class="nav-link u-header__sub-menu-nav-link" href="<?php echo site_url("/") ?>">Customer Service</a>
+
+                                                </li>
                                                 <li><a class="nav-link u-header__sub-menu-nav-link" href="<?php echo site_url("/") ?>">Privacy Policy</a></li>
                                                 <li><a class="nav-link u-header__sub-menu-nav-link" href="<?php echo site_url("/") ?>">Terms of Service</a></li>
 
                                             </ul>
                                             <!-- End Submenu -->
+                                        </li>
+
+                                        <li class="yamm-fw menu-item menu-item-has-children animate-dropdown dropdown">
+                                            <a  class="nav-link u-header__nav-link u-header__nav-link-toggle" title="Pages" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" href="javascript:;" aria-haspopup="true" aria-expanded="false" >PRODUCTS</a>
+                                            <ul role="menu" class=" dropdown-menu" style="width: 800px;">
+                                                <li class="menu-item animate-dropdown">
+                                                    <div class="yamm-content" style="display:inline-block; width: 100%;">
+                                                        <div class="row">
+                                                            <?php
+                                                            foreach ($megamenuitems as $key1 => $mainmenu) {
+                                                                ?>
+                                                                <div class="wpb_column vc_column_container col-sm-4">
+                                                                    <div class="vc_column-inner ">
+                                                                        <div class="wpb_wrapper">
+                                                                            <div class="vc_wp_custommenu wpb_content_element">
+                                                                                <div class="widget widget_nav_menu">
+                                                                                    <div class="menu-pages-menu-1-container">
+                                                                                        <ul id="menu-pages-menu-1" class="menu">
+                                                                                            <li class="nav-title menu-item">
+                                                                                                <a href="#" class="menumainitem"><?php echo $key1; ?></a>
+                                                                                            </li>
+                                                                                            <?php
+                                                                                            foreach ($mainmenu as $key2 => $menu2) {
+                                                                                                ?>
+                                                                                                <li class="nav-title menu-item"> 
+                                                                                                    <a href="#" class="submenumainitem"><?php echo $key2; ?></a>
+                                                                                                </li>
+                                                                                                <?php
+                                                                                                foreach ($menu2 as $key2 => $item) {
+                                                                                                    ?>
+                                                                                                    <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url('Product/productListView') ?>"><?php echo $item; ?></a></li>
+
+                                                                                                    <?php
+                                                                                                }
+                                                                                            }
+                                                                                            ?>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </li>
 
                                         <!-- Featured Brands -->
